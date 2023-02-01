@@ -78,19 +78,19 @@ This table stores information about the tenant database connection strings. When
 
 ### BlgUsers
 
-This table stores information about the blog users.
+This table stores information about the blog users. When a new identity user is created, a new record will be added to this table.
 
 ---
 
 ### BlgBlogs
 
-This table stores information about the blogs.
+This table serves to store blog information and semantically separates the posts of each blog.
 
 ---
 
 ### BlgPosts
 
-This table stores information about the blog posts.
+This table stores information about the blog posts. You can query this table to get blog posts by blogs.
 
 #### Foreign Keys
 
@@ -101,7 +101,7 @@ This table stores information about the blog posts.
 
 ### BlgComments
 
-This table stores information about comments made on blog posts.
+This table stores information about comments made on blog posts. You can query this table to get comments by posts.
 #### Foreign Keys
 
 | Table | Column | Description |
@@ -113,13 +113,13 @@ This table stores information about comments made on blog posts.
 
 ### BlgTags
 
-This table stores information about the tags.
+This table stores information about the tags. When a new tag is used, a new record will be added to this table. You can query this table to get tags by blogs.
 
 ---
 
 ### BlgPostTags
 
-This table stores information about the post tags.
+This table is used to associate tags with blog posts in order to categorize and organize the content. You can query this table to get post tags by posts.
 
 #### Foreign Keys
 
@@ -134,19 +134,19 @@ This table stores information about the post tags.
 
 ### CmsUsers
 
-This table stores information about the cms kit module users.
+This table stores information about the cms kit module users. When a new identity user is created, a new record will be added to this table.
 
 ---
 
 ### CmsBlogs
 
-This table stores information about the blogs.
+This table serves to store blog information and semantically separates the posts of each blog.
 
 ---
 
 ### CmsBlogPosts
 
-This table stores information about the blog posts.
+This table stores information about the blog posts. You can query this table to get blog posts by blogs.
 
 #### Foreign Keys
 
@@ -158,61 +158,61 @@ This table stores information about the blog posts.
 
 ### CmsBlogFeatures
 
-This table stores information about the blog features.
+This table stores information about the blog features. You can query this table to get blog features by blogs.
 
 ---
 
 ### CmsComments
 
-This table is used to store the comments and their relations with entities. The table is used by the CmsComments component.
+This table is utilized by the CMS Kit Comment system to store comments made on blog posts. You can query this table to get comments by posts.
 
 ---
 
 ### CmsTags
 
-This table stores information about the tags. When a new tag is used, a new record will be added to this table.
+This table stores information about the tags. When a new tag is used, a new record will be added to this table. You can query this table to get tags by blogs.
 
 ---
 
 ### CmsEntityTags
 
-This table is used to store the tags and their relations with entities. The table is used by the CmsTags component.
+This table is utilized by the Tag Management to store tags and their relationship with various entities, thus enabling efficient categorization and organization of content. You can query this table to get entity tags by entities.
 
 ---
 
 ### CmsGlobalResources
 
-This table stores information about the global resources.
+This table is a database table for the CmsGlobalResources system, allowing for dynamic addition of global styles and scripts.
 
 ---
 
 ### CmsMediaDescriptors
 
-This table stores information about the media descriptors. 
+This table is utilized by the CMS kit module to manage media files by using the abp blob storing package.
 
 ---
 
 ### CmsMenuItems
 
-This table stores information about the menu items.
+This table is used by the CMS Kit Menu system to manage and store information about dynamic public menus, including details such as menu item display names, url, and hierarchical relationships.
 
 ---
 
 ### CmsPages
 
-This table stores the pages in the application.
+This table is utilized by the CMS Kit Page system to store dynamic pages within the application, including information such as page URLs, titles, and content.
 
 ---
 
 ### CmsRatings
 
-This table stores information about the ratings.
+This table is utilized by the CMS Kit Rating system to store ratings made on blog posts. You can query this table to get ratings by posts.
 
 ---
 
 ### CmsUserReactions
 
-This table stores information about the user reactions.
+This table is utilized by the CMS Kit Reaction system to store reactions made on blog posts. You can query this table to get reactions by posts.
 
 ---
 
