@@ -220,19 +220,19 @@ This table is utilized by the CMS Kit Reaction system to store reactions made on
 
 ### DocsProjects
 
-This table stores information about the documentation projects.
+This table stores project information to categorize documents according to different projects.
 
 ---
 
 ### DocsDocuments
 
-This table stores information about the documents.
+The table is used to retrieve document information in case the document is not accessible, and to update the record of the document if it is accessible.
 
 ---
 
 ### DocsDocumentContributors
 
-This table stores information about the document contributors.
+This table stores information about the contributors of the documents. You can query this table to get document contributors by documents.
 
 #### Foreign Keys
 
@@ -252,13 +252,13 @@ This table stores information about the feature groups in the application. For e
 
 ### AbpFeatures
 
-This table stores information about the features in the application.
+This table stores information about the features in the application. You can use the `Name` column to link each feature with its corresponding feature value in the [`AbpFeatureValues`](#abpfeaturevalues) table, so that you can easily manage and organize the features.
 
 ---
 
 ### AbpFeatureValues
 
-This table stores the values of the features for different providers. For example, you can use the `Name` column to link each feature value with its corresponding feature in the [`AbpFeatures`](#abpfeatures) table, so that you can easily manage and organize the features.
+This table stores the values of the features for different providers. You can use the `Name` column to link each feature value with its corresponding feature in the [`AbpFeatures`](#abpfeatures) table, so that you can easily manage and organize the features.
 
 ---
 
@@ -266,7 +266,7 @@ This table stores the values of the features for different providers. For exampl
 
 ### AbpUsers
 
-This table stores information about the users in the application.
+This table stores information about the identity users in the application.
 
 ---
 
