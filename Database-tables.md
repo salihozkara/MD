@@ -14,7 +14,7 @@ This table stores information about the audit logs in the application. Each reco
 
 This table stores information about the actions performed in the application, which are logged for auditing purposes.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -26,7 +26,7 @@ This table stores information about the actions performed in the application, wh
 
 This table stores information about entity changes in the application, which are logged for auditing purposes.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -92,7 +92,7 @@ This table stores information about the blogs.
 
 This table stores information about the blog posts.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -102,7 +102,7 @@ This table stores information about the blog posts.
 ### BlgComments
 
 This table stores information about comments made on blog posts.
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -121,7 +121,7 @@ This table stores information about the tags.
 
 This table stores information about the post tags.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -148,7 +148,7 @@ This table stores information about the blogs.
 
 This table stores information about the blog posts.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -234,7 +234,7 @@ This table stores information about the documents.
 
 This table stores information about the document contributors.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -292,7 +292,7 @@ This table is useful for linking multiple user accounts across different tenants
 
 This table can be used to manage user-based access control by allowing to assign claims to users, which describe the access rights of the individual user.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -304,7 +304,7 @@ This table can be used to manage user-based access control by allowing to assign
 
 This table can be used to store information about user's external logins such as login with facebook, google, etc and also it can be used to track login history of users.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -316,7 +316,7 @@ This table can be used to store information about user's external logins such as
 
 This table can be used to manage user-based access control by allowing to assign roles to users, which describe the access rights of the individual user.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -329,7 +329,7 @@ This table can be used to manage user-based access control by allowing to assign
 
 This table can be used to store information about user's refresh tokens, access tokens and other tokens used in the application. It can also be used to invalidate or revoke user tokens.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -341,7 +341,7 @@ This table can be used to store information about user's refresh tokens, access 
 
 This table is useful for creating and managing a hierarchical structure of the organization, allowing to group users and assign roles based on the organization structure. For example, you can use the `Code`, `ParentId` columns to filter the organization units by code and parent id respectively, so that you can easily manage and track the organization units in the application.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -353,7 +353,7 @@ This table is useful for creating and managing a hierarchical structure of the o
 
 This table is useful for managing role-based access control at the level of organization units, allowing to assign different roles to different parts of the organization structure. For example, you can use the `OrganizationUnitId`, `RoleId` columns to filter the roles by organization unit id and role id respectively, so that you can easily manage and track the roles assigned to organization units in the application.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -366,7 +366,7 @@ This table is useful for managing role-based access control at the level of orga
 
 This table stores information about the organization units assigned to users in the application. This table can be used to manage user-organization unit relationships, and to group users based on the organization structure.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -379,7 +379,7 @@ This table stores information about the organization units assigned to users in 
 
 This table is useful for managing role-based access control by allowing to assign claims to roles, which describe the access rights of the users that belong to that role.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -433,7 +433,7 @@ This table can be used to store information about OpenID Connect applications, i
 
 This table stores the OpenID Connect authorization data in the application. It can also be used to manage and validate the authorization grants issued to clients and users.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -445,7 +445,7 @@ This table stores the OpenID Connect authorization data in the application. It c
 
 This table can be used to store information about OpenID Connect tokens, including the token payload, expiration, type, and other relevant information. It can also be used to manage and validate the tokens issued to clients and users, such as access tokens and refresh tokens, and to control access to protected resources.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -490,7 +490,7 @@ This table can be used to store information about API scopes, including the scop
 
 This table can be used to store information about claims of an API resource, including the claim type and API resource id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -502,7 +502,7 @@ This table can be used to store information about claims of an API resource, inc
 
 This table can be used to store information about claims of an identity resource, including the claim type and identity resource id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -514,7 +514,7 @@ This table can be used to store information about claims of an identity resource
 
 This table can be used to store information about claims of a client, including the claim type, claim value and client id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -526,7 +526,7 @@ This table can be used to store information about claims of a client, including 
 
 This table can be used to store information about claims of an API scope, including the claim type and API scope id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -538,7 +538,7 @@ This table can be used to store information about claims of an API scope, includ
 
 This table can be used to store information about properties, including the property key and value, and the associated API resource. These properties can be used to store additional metadata or configuration information related to the API resources.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -550,7 +550,7 @@ This table can be used to store information about properties, including the prop
 
 This table can be used to store information about properties, including the property key and value, and the associated identity resource. These properties can be used to store additional metadata or configuration information related to the identity resources.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -562,7 +562,7 @@ This table can be used to store information about properties, including the prop
 
 This table can be used to store information about properties of a client, including the key, value and client id. These properties can be used to store additional metadata or configuration information related to the clients.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -574,7 +574,7 @@ This table can be used to store information about properties of a client, includ
 
 This table can be used to store information about properties of an API scope, including the key, value and API scope id. These properties can be used to store additional metadata or configuration information related to the API scopes.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -586,7 +586,7 @@ This table can be used to store information about properties of an API scope, in
 
 This table can be used to store information about scopes of an API resource, including the scope name and API resource id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -598,7 +598,7 @@ This table can be used to store information about scopes of an API resource, inc
 
  This table can be used to store information about scopes of a client, including the scope and client id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -610,7 +610,7 @@ This table can be used to store information about scopes of an API resource, inc
 
 This table can be used to store information about secrets of an API resource, including the secret value, expiration date, and API resource id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -622,7 +622,7 @@ This table can be used to store information about secrets of an API resource, in
 
 This table can be used to store information about secrets of a client, including the secret value, expiration date, and client id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -634,7 +634,7 @@ This table can be used to store information about secrets of a client, including
 
 This table can be used to store information about CORS origins of a client, including the origin and client id. It can also be used to manage and validate the CORS origins of a client.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -646,7 +646,7 @@ This table can be used to store information about CORS origins of a client, incl
 
 This table can be used to store information about grant types of a client, including the grant type and client id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -658,7 +658,7 @@ This table can be used to store information about grant types of a client, inclu
 
 This table can be used to store information about identity provider restrictions of a client, including the identity provider and client id. 
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -670,7 +670,7 @@ This table can be used to store information about identity provider restrictions
 
 This table can be used to store information about post logout redirect URIs of a client, including the post logout redirect URI and client id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -682,7 +682,7 @@ This table can be used to store information about post logout redirect URIs of a
 
 This table can be used to store information about redirect URIs of a client, including the redirect URI and client id.
 
-#### Uses
+#### Foreign Keys
 
 | Table | Column | Description |
 | --- | --- | --- |
@@ -714,7 +714,7 @@ This table is important for providing a better user experience by allowing the a
 
 This table stores the binary data of BLOBs (binary large objects) in the application. Each BLOB is related to a container in the "AbpBlobContainers" table, where the container name, tenant id and other properties of the container can be found.
 
-#### Uses 
+#### Foreign Keys 
 
 | Table | Column | Description |
 | --- | --- | --- |
