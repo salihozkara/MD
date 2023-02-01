@@ -6,15 +6,11 @@ This documentation describes all database tables and their purposes. You can rea
 
 ### AbpAuditLogs
 
-#### Description
-
 This table stores information about the audit logs in the application. Each record represents an audit log and tracks the actions performed in the application.
 
 ---
 
 ### AbpAuditLogActions
-
-#### Description
 
 This table stores information about the actions performed in the application, which are logged for auditing purposes.
 
@@ -28,9 +24,7 @@ This table stores information about the actions performed in the application, wh
 
 ### AbpEntityChanges
 
-#### Description
-
-This table stores information about entity changes in the application.
+This table stores information about entity changes in the application, which are logged for auditing purposes.
 
 #### Uses
 
@@ -42,23 +36,19 @@ This table stores information about entity changes in the application.
 
 ### AbpEntityPropertyChanges
 
-#### Description
-
-This table stores information about property changes to entities in the application.
+This table stores information about property changes to entities in the application, which are logged for auditing purposes.
 
 ## Uses
 
 | Table | Column | Description |
 | --- | --- | --- |
-| [AbpEntityChanges](#abpentitychanges) | Id | 	To associate the property change with the corresponding entity change. |
+| [AbpEntityChanges](#abpentitychanges) | Id | 	Links each property change to a specific entity change. |
 
 ---
 
 ## [Background Jobs Module](Background-Jobs.md)
 
 ### AbpBackgroundJobs
-
-#### Description
 
 This table stores information about the background jobs in the application and facilitates their efficient management and tracking. Each entry in the table contains details of a background job, including job name, arguments, try count, next try time, last try time, abandoned status, and priority.
 
@@ -68,23 +58,19 @@ This table stores information about the background jobs in the application and f
 
 ### AbpTenants
 
-#### Description
-
-This table stores information about the tenants.
+This table stores information about the tenants. Each record represents a tenant and contains information about the tenant, such as name and other details.
 
 ---
 
 ### AbpTenantConnectionStrings
 
-#### Description
-
-This table stores information about the tenant database connection strings.
+This table stores information about the tenant database connection strings. When you define a connection string for a tenant, a new record will be added to this table. You can query this database to get connection strings by tenants.
 
 ## Uses
 
 | Table | Column | Description |
 | --- | --- | --- |
-| [AbpTenants](#AbpTenants) | Id | The `Id` column in the `AbpTenants` table is used to associate the tenant connection string with the corresponding tenant. |
+| [AbpTenants](#abptenants) | Id | The `Id` column in the `AbpTenants` table is used to associate the tenant connection string with the corresponding tenant. |
 
 ---
 
@@ -92,23 +78,17 @@ This table stores information about the tenant database connection strings.
 
 ### BlgUsers
 
-#### Description
-
 This table stores information about the blog users.
 
 ---
 
 ### BlgBlogs
 
-#### Description
-
 This table stores information about the blogs.
 
 ---
 
 ### BlgPosts
-
-#### Description
 
 This table stores information about the blog posts.
 
@@ -120,7 +100,6 @@ This table stores information about the blog posts.
 ---
 
 ### BlgComments
-#### Description
 
 This table stores information about comments made on blog posts.
 #### Uses
@@ -133,15 +112,12 @@ This table stores information about comments made on blog posts.
 ---
 
 ### BlgTags
-#### Description
 
 This table stores information about the tags.
 
 ---
 
 ### BlgPostTags
-
-#### Description
 
 This table stores information about the post tags.
 
@@ -158,23 +134,17 @@ This table stores information about the post tags.
 
 ### CmsUsers
 
-#### Description
-
 This table stores information about the cms kit module users.
 
 ---
 
 ### CmsBlogs
 
-#### Description
-
 This table stores information about the blogs.
 
 ---
 
 ### CmsBlogPosts
-
-#### Description
 
 This table stores information about the blog posts.
 
@@ -188,15 +158,11 @@ This table stores information about the blog posts.
 
 ### CmsBlogFeatures
 
-#### Description
-
 This table stores information about the blog features.
 
 ---
 
 ### CmsComments
-
-#### Description
 
 This table is used to store the comments and their relations with entities. The table is used by the CmsComments component.
 
@@ -204,15 +170,11 @@ This table is used to store the comments and their relations with entities. The 
 
 ### CmsTags
 
-#### Description
-
-This table stores information about the tags.
+This table stores information about the tags. When a new tag is used, a new record will be added to this table.
 
 ---
 
 ### CmsEntityTags
-
-#### Description
 
 This table is used to store the tags and their relations with entities. The table is used by the CmsTags component.
 
@@ -220,15 +182,11 @@ This table is used to store the tags and their relations with entities. The tabl
 
 ### CmsGlobalResources
 
-#### Description
-
 This table stores information about the global resources.
 
 ---
 
 ### CmsMediaDescriptors
-
-#### Description
 
 This table stores information about the media descriptors. 
 
@@ -236,16 +194,540 @@ This table stores information about the media descriptors.
 
 ### CmsMenuItems
 
-#### Description
-
 This table stores information about the menu items.
 
 ---
 
 ### CmsPages
 
-#### Description
-
 This table stores the pages in the application.
 
 ---
+
+### CmsRatings
+
+This table stores information about the ratings.
+
+---
+
+### CmsUserReactions
+
+This table stores information about the user reactions.
+
+---
+
+## [Docs Module](Docs.md)
+
+### DocsProjects
+
+This table stores information about the documentation projects.
+
+---
+
+### DocsDocuments
+
+This table stores information about the documents.
+
+---
+
+### DocsDocumentContributors
+
+This table stores information about the document contributors.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [DocsDocuments](#docsdocuments) | Id | Links the document contributor to the corresponding document. |
+
+---
+
+## [Feature Management Module](Feature-Management.md)
+
+### AbpFeatureGroups
+
+This table stores information about the feature groups in the application. For example, you can group all the features in the [`AbpFeatures`](#abpfeatures) table related to the `Identity` module under the `Identity` group.
+
+---
+
+### AbpFeatures
+
+This table stores information about the features in the application.
+
+---
+
+### AbpFeatureValues
+
+This table stores the values of the features for different providers. For example, you can use the `Name` column to link each feature value with its corresponding feature in the [`AbpFeatures`](#abpfeatures) table, so that you can easily manage and organize the features.
+
+---
+
+## [Identity Module](Identity.md)
+
+### AbpUsers
+
+This table stores information about the users in the application.
+
+---
+
+### AbpRoles
+
+This table stores information about the roles in the application. Roles are used to manage and control access to different parts of the application by assigning permissions and claims to roles and then assigning those roles to users. This table is important for managing and organizing the roles in the application, and for defining the access rights of the users.
+
+---
+
+### AbpClaimTypes
+
+This table stores information about the claim types used in the application. You can use the `Name`, `Regex` columns to filter the claim types by name, and regex pattern respectively, so that you can easily manage and track the claim types in the application.
+
+---
+
+### AbpLinkUsers
+
+This table is useful for linking multiple user accounts across different tenants or applications to a single user, allowing them to easily switch between their accounts.
+
+---
+
+### AbpUserClaims
+
+This table can be used to manage user-based access control by allowing to assign claims to users, which describe the access rights of the individual user.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [AbpUsers](#abpusers) | Id | Links the user claim to the corresponding user. |
+
+---
+
+### AbpUserLogins
+
+This table can be used to store information about user's external logins such as login with facebook, google, etc and also it can be used to track login history of users.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [AbpUsers](#abpusers) | Id | Links the user login to the corresponding user. |
+
+---
+
+### AbpUserRoles
+
+This table can be used to manage user-based access control by allowing to assign roles to users, which describe the access rights of the individual user.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [AbpUsers](#abpusers) | Id | Links the user role to the corresponding user. |
+| [AbpRoles](#abproles) | Id | Links the user role to the corresponding role. |
+
+---
+
+### AbpUserTokens
+
+This table can be used to store information about user's refresh tokens, access tokens and other tokens used in the application. It can also be used to invalidate or revoke user tokens.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [AbpUsers](#abpusers) | Id | Links the user token to the corresponding user. |
+
+---
+
+### AbpOrganizationUnits
+
+This table is useful for creating and managing a hierarchical structure of the organization, allowing to group users and assign roles based on the organization structure. For example, you can use the `Code`, `ParentId` columns to filter the organization units by code and parent id respectively, so that you can easily manage and track the organization units in the application.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [AbpOrganizationUnits](#abporganizationunits) | ParentId | Links the organization unit to its parent organization unit. |
+
+---
+
+### AbpOrganizationUnitRoles
+
+This table is useful for managing role-based access control at the level of organization units, allowing to assign different roles to different parts of the organization structure. For example, you can use the `OrganizationUnitId`, `RoleId` columns to filter the roles by organization unit id and role id respectively, so that you can easily manage and track the roles assigned to organization units in the application.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [AbpOrganizationUnits](#abporganizationunits) | Id | Links the organization unit role to the corresponding organization unit. |
+| [AbpRoles](#abproles) | Id | Links the organization unit role to the corresponding role. |
+
+---
+
+### AbpUserOrganizationUnits
+
+This table stores information about the organization units assigned to users in the application. This table can be used to manage user-organization unit relationships, and to group users based on the organization structure.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [AbpUsers](#abpusers) | Id | Links the user organization unit to the corresponding user. |
+| [AbpOrganizationUnits](#abporganizationunits) | Id | Links the user organization unit to the corresponding organization unit. |
+
+---
+
+### AbpRoleClaims
+
+This table is useful for managing role-based access control by allowing to assign claims to roles, which describe the access rights of the users that belong to that role.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [AbpRoles](#abproles) | Id | Links the role claim to the corresponding role. |
+
+---
+
+### AbpSecurityLogs
+
+This table is useful for auditing and troubleshooting the application, by providing a history of who did what and when.
+
+---
+
+## [Permission Management](Permission-Management.md)
+
+### AbpPermissionGroups
+
+This table is important for managing and organizing the permissions in the application, by grouping them into logical categories.
+
+---
+
+### AbpPermissions
+
+This table is important for managing and controlling access to different parts of the application and for defining the granular permissions that make up the larger permissions or roles.
+
+---
+
+### AbpPermissionGrants
+
+The table is used to store and manage the permissions in the application and to keep track of permissions that are granted, to whom and when. The columns such as `Name`, `ProviderName`, `ProviderKey`, `TenantId` can be used to filter the granted permissions by name, provider name, provider key, and tenant id respectively, so that you can easily manage and track the granted permissions in the application. 
+
+---
+
+## [Setting Management](Setting-Management.md)
+
+### AbpSettings
+
+This table table is used to store key-value pairs of settings for the application, and it allows for the dynamic configuration of the application without the need for recompilation.
+
+---
+
+## [OpenIddict](OpenIddict.md)
+
+### OpenIddictApplications
+
+This table can be used to store information about OpenID Connect applications, including the client id, client secret, redirect uri, and other relevant information. It can also be used to authenticate and authorize clients using OpenID Connect protocol.
+
+---
+
+### OpenIddictAuthorizations
+
+This table stores the OpenID Connect authorization data in the application. It can also be used to manage and validate the authorization grants issued to clients and users.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [OpenIddictApplications](#openiddictapplications) | Id | Links the authorization to the corresponding application. |
+
+---
+
+### OpenIddictTokens
+
+This table can be used to store information about OpenID Connect tokens, including the token payload, expiration, type, and other relevant information. It can also be used to manage and validate the tokens issued to clients and users, such as access tokens and refresh tokens, and to control access to protected resources.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [OpenIddictApplications](#openiddictapplications) | Id | Links the token to the corresponding application. |
+| [OpenIddictAuthorizations](#openiddictauthorizations) | Id | Links the token to the corresponding authorization. |
+
+---
+
+### OpenIddictScopes
+
+This table can be used to store information about OpenID Connect scopes, including the name and description of the scope. It can also be used to define the permissions or access rights associated with the scopes, which are then used to control access to protected resources.
+
+---
+
+## [IdentityServer](IdentityServer.md)
+
+### IdentityServerApiResources
+
+This table can be used to store information about API resources, including the resource name, display name, description, and other relevant information. It can also be used to define the scopes, claims, and properties associated with the API resources, which are then used to control access to protected resources.
+
+---
+
+### IdentityServerIdentityResources
+
+This table can be used to store information about identity resources, including the name, display name, description, and enabled status.
+
+---
+
+### IdentityServerClients
+
+This table can be used to store information about clients, including the client id, client name, client uri and other relevant information. It can also be used to define the scopes, claims, and properties associated with the clients, which are then used to control access to protected resources.
+
+---
+
+### IdentityServerApiScopes
+
+This table can be used to store information about API scopes, including the scope name, display name, description, and other relevant information. It can also be used to define the claims and properties associated with the API scopes, which are then used to control access to protected resources.
+
+---
+
+### IdentityServerApiResourceClaims
+
+This table can be used to store information about claims of an API resource, including the claim type and API resource id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerApiResources](#identityserverapiresources) | Id | Links the claim to the corresponding API resource. |
+
+---
+
+### IdentityServerIdentityResourceClaims
+
+This table can be used to store information about claims of an identity resource, including the claim type and identity resource id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerIdentityResources](#identityserveridentityresources) | Id | Links the claim to the corresponding identity resource. |
+
+---
+
+### IdentityServerClientClaims
+
+This table can be used to store information about claims of a client, including the claim type, claim value and client id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerClients](#identityserverclients) | Id | Links the claim to the corresponding client. |
+
+---
+
+### IdentityServerApiScopeClaims
+
+This table can be used to store information about claims of an API scope, including the claim type and API scope id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerApiScopes](#identityserverapiscopes) | Id | Links the claim to the corresponding API scope. |
+
+---
+
+### IdentityServerApiResourceProperties
+
+This table can be used to store information about properties, including the property key and value, and the associated API resource. These properties can be used to store additional metadata or configuration information related to the API resources.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerApiResources](#identityserverapiresources) | Id | Links the property to the corresponding API resource. |
+
+---
+
+### IdentityServerIdentityResourceProperties
+
+This table can be used to store information about properties, including the property key and value, and the associated identity resource. These properties can be used to store additional metadata or configuration information related to the identity resources.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerIdentityResources](#identityserveridentityresources) | Id | Links the property to the corresponding identity resource. |
+
+---
+
+### IdentityServerClientProperties
+
+This table can be used to store information about properties of a client, including the key, value and client id. These properties can be used to store additional metadata or configuration information related to the clients.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerClients](#identityserverclients) | Id | Links the property to the corresponding client. |
+
+---
+
+### IdentityServerApiScopeProperties
+
+This table can be used to store information about properties of an API scope, including the key, value and API scope id. These properties can be used to store additional metadata or configuration information related to the API scopes.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerApiScopes](#identityserverapiscopes) | Id | Links the property to the corresponding API scope. |
+
+---
+
+### IdentityServerApiResourceScopes
+
+This table can be used to store information about scopes of an API resource, including the scope name and API resource id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerApiResources](#identityserverapiresources) | Id | Links the scope to the corresponding API resource. |
+
+---
+
+### IdentityServerClientScopes
+
+ This table can be used to store information about scopes of a client, including the scope and client id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerClients](#identityserverclients) | Id | Links the scope to the corresponding client. |
+
+---
+
+### IdentityServerApiResourceSecrets
+
+This table can be used to store information about secrets of an API resource, including the secret value, expiration date, and API resource id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerApiResources](#identityserverapiresources) | Id | Links the secret to the corresponding API resource. |
+
+---
+
+### IdentityServerClientSecrets
+
+This table can be used to store information about secrets of a client, including the secret value, expiration date, and client id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerClients](#identityserverclients) | Id | Links the secret to the corresponding client. |
+
+---
+
+### IdentityServerClientCorsOrigins
+
+This table can be used to store information about CORS origins of a client, including the origin and client id. It can also be used to manage and validate the CORS origins of a client.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerClients](#identityserverclients) | Id | Links the CORS origin to the corresponding client. |
+
+---
+
+### IdentityServerClientGrantTypes
+
+This table can be used to store information about grant types of a client, including the grant type and client id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerClients](#identityserverclients) | Id | Links the grant type to the corresponding client. |
+
+---
+
+### IdentityServerClientIdPRestrictions
+
+This table can be used to store information about identity provider restrictions of a client, including the identity provider and client id. 
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerClients](#identityserverclients) | Id | Links the identity provider restriction to the corresponding client. |
+
+---
+
+### IdentityServerClientPostLogoutRedirectUris
+
+This table can be used to store information about post logout redirect URIs of a client, including the post logout redirect URI and client id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerClients](#identityserverclients) | Id | Links the post logout redirect URI to the corresponding client. |
+
+---
+
+### IdentityServerClientRedirectUris
+
+This table can be used to store information about redirect URIs of a client, including the redirect URI and client id.
+
+#### Uses
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [IdentityServerClients](#identityserverclients) | Id | Links the redirect URI to the corresponding client. |
+
+---
+
+### IdentityServerDeviceFlowCodes
+
+This table can be used to store information about device flow codes, including the user code, device code, subject id, client id, creation time, expiration, data and session id.
+
+---
+
+### IdentityServerPersistedGrants
+
+This table can be used to store information about persisted grants, including the key, type, subject id, client id, creation time, expiration, and data.
+
+---
+
+## Others
+
+### AbpBlobContainers
+
+This table is important for providing a better user experience by allowing the application to support multiple containers and providing BLOB-specific features.
+
+---
+
+### AbpBlobs
+
+This table stores the binary data of BLOBs (binary large objects) in the application. Each BLOB is related to a container in the "AbpBlobContainers" table, where the container name, tenant id and other properties of the container can be found.
+
+#### Uses 
+
+| Table | Column | Description |
+| --- | --- | --- |
+| [AbpBlobContainers](#abpblobcontainers) | Id | Links the BLOB to the corresponding container. |
+
+---
+
+### AbpLocalizationResources
+
+This table stores the localization resources for the application. This table is important for providing a better user experience by allowing the application to support multiple resources and providing localized text and other localization-specific features.
+
+---
+
+### AbpLocalizationTexts
+
+The table contains the resource name, culture name, and a json encoded value which holds the key-value pair of localization text. It allows for efficient storage and management of localization texts and allows for easy update or addition of new translations for specific resources and cultures.
