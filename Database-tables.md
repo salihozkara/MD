@@ -188,7 +188,7 @@ This table is a database table for the CmsGlobalResources system, allowing for d
 
 ### CmsMediaDescriptors
 
-This table is utilized by the CMS kit module to manage media files by using the abp blob storing package.
+This table is utilized by the CMS kit module to manage media files by using the [BlobStoring](../Blob-Storing.md) module.
 
 ---
 
