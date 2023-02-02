@@ -712,7 +712,7 @@ This table is important for providing a better user experience by allowing the a
 
 ### AbpBlobs
 
-This table stores the binary data of BLOBs (binary large objects) in the application. Each BLOB is related to a container in the "AbpBlobContainers" table, where the container name, tenant id and other properties of the container can be found.
+This table stores the binary data of BLOBs (binary large objects) in the application. Each BLOB is related to a container in the [AbpBlobContainers](#abpblobcontainers) table, where the container name, tenant id and other properties of the container can be found.
 
 #### Foreign Keys 
 
