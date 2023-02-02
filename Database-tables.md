@@ -226,7 +226,7 @@ This table stores project information to categorize documents according to diffe
 
 ### DocsDocuments
 
-The table is used to retrieve document information in case the document is not accessible, and to update the record of the document if it is accessible.
+This table is used to retrieve the document if it's not found in the cache. When the documentation content retrieved from the database, it is also being updated.
 
 ---
 
@@ -339,7 +339,7 @@ This table can be used to store information about user's refresh tokens, access 
 
 ### AbpOrganizationUnits
 
-This table is useful for creating and managing a hierarchical structure of the organization, allowing to group users and assign roles based on the organization structure. For example, you can use the `Code`, `ParentId` columns to filter the organization units by code and parent id respectively, so that you can easily manage and track the organization units in the application.
+This table is useful for creating and managing a hierarchical structure of the organization, allowing to group users and assign roles based on the organization structure. You can use the `Code`, `ParentId` columns to filter the organization units by code and parent id respectively, so that you can easily manage and track the organization units in the application.
 
 #### Foreign Keys
 
@@ -351,7 +351,7 @@ This table is useful for creating and managing a hierarchical structure of the o
 
 ### AbpOrganizationUnitRoles
 
-This table is useful for managing role-based access control at the level of organization units, allowing to assign different roles to different parts of the organization structure. For example, you can use the `OrganizationUnitId`, `RoleId` columns to filter the roles by organization unit id and role id respectively, so that you can easily manage and track the roles assigned to organization units in the application.
+This table is useful for managing role-based access control at the level of organization units, allowing to assign different roles to different parts of the organization structure. You can use the `OrganizationUnitId`, `RoleId` columns to filter the roles by organization unit id and role id respectively, so that you can easily manage and track the roles assigned to organization units in the application.
 
 #### Foreign Keys
 
@@ -389,7 +389,7 @@ This table is useful for managing role-based access control by allowing to assig
 
 ### AbpSecurityLogs
 
-This table is useful for auditing and troubleshooting the application, by providing a history of who did what and when.
+This table is used to log important operations and changes related to user accounts, allowing users to save the security logs for future reference.
 
 ---
 
