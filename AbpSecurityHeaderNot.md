@@ -1,5 +1,9 @@
 Şuan modalda lazy load script varsa çalışmıyor.
 
+Çözüm önerisi:
+
+https://github.com/salihozkara/Volo.Abp.SecurityHeaderTest/commit/67e4ef138db76c5cdfd2361562c8dd5012ea7db7
+
 [Global script tag helper](https://github.com/abpframework/abp/pull/16496/files#diff-780060cc19621243a4f319661074649ca9aee2a608604b22e69d21b7b46e80c8) yazdığımız için bu özelliği kullanmayacak kişilerde etkilenecek ve altta verilen benzeri bir kod varsa çalışmayacaktır.
 Kod : 
 ```cs
