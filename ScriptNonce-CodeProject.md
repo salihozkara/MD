@@ -32,11 +32,9 @@ By leveraging the capabilities provided by ABP, web developers can effectively i
 
 1. Enhanced Security: The implementation of the script nonce mechanism provided by ABP significantly enhances the security of web applications by preventing Cross-Site Scripting (XSS) attacks. Only JavaScript code with the correct nonce value is executed, ensuring that malicious code injected by attackers is blocked.
 
-2. Seamless Integration: ABP's built-in components, such as the `AbpSecurityHeaderMiddleware` and `NonceScriptTagHelper`, seamlessly integrate with the framework, making it easy to implement the script nonce feature. Developers can leverage these components without the need for extensive manual configuration.
+2. Simplified Development: ABP simplifies the process of adding nonce values to script tags and HTTP headers. The `AbpSecurityHeaderMiddleware` automatically adds the nonce value to the HTTP headers, while the `NonceScriptTagHelper` inserts the nonce value into the "nonce" attribute of the JavaScript tag. This streamlined approach reduces development effort and complexity.
 
-3. Simplified Development: ABP simplifies the process of adding nonce values to script tags and HTTP headers. The `AbpSecurityHeaderMiddleware` automatically adds the nonce value to the HTTP headers, while the `NonceScriptTagHelper` inserts the nonce value into the "nonce" attribute of the JavaScript tag. This streamlined approach reduces development effort and complexity.
-
-4. Flexibility and Customization: ABP allows for flexibility in configuring the script nonce feature. Developers can customize the usage of the script nonce by specifying ignored paths or selectors, tailoring the implementation to specific pages or situations. This customization ensures that the script nonce is applied where needed and provides fine-grained control over its usage.
+3. Flexibility and Customization: ABP allows for flexibility in configuring the script nonce feature. Developers can customize the usage of the script nonce by specifying ignored paths or selectors, tailoring the implementation to specific pages or situations. This customization ensures that the script nonce is applied where needed and provides fine-grained control over its usage.
 
 ## Cons of Our Solution
 
