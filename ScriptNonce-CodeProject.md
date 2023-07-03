@@ -16,8 +16,6 @@ In summary, the problem lies in the need for manually assigning nonce values to 
 
 ## How We Solved It
 
-ABP is a powerful framework for building web applications, and it provides a robust solution to address the challenge of preventing Cross-Site Scripting (XSS) attacks. ABP simplifies the implementation of the script nonce mechanism, ensuring secure execution of JavaScript code on web pages.
-
 ABP offers the AbpSecurityHeaderMiddleware and NonceScriptTagHelper components to handle the script nonce feature seamlessly. These components are specifically designed to work with ABP and streamline the process of adding nonce values to script tags and HTTP headers.
 
 The AbpSecurityHeaderMiddleware is an integral part of ABP that automatically adds the nonce value to the HTTP headers. It generates a unique nonce value for each request and includes it in the appropriate headers of the HTTP response. This ensures that the correct nonce value is communicated to the client's browser, allowing the execution of trusted JavaScript code.
