@@ -1,0 +1,28 @@
+An audit log entry consists of critical data about each client request:
+
+* URL, Browser, IP address, client name,
+* The user,
+* HTTP method, HTTP return status code,
+* Success/failure, exception details if available,
+* Request execution duration,
+* The entities have been created, deleted or updated in this request (with changed properties).
+
+Audit log system can be controlled  by class, method, entity and property levels. The screenshots(screenshots from audit logging ui module) below show some details of a simple audit log:
+
+![audit-logging-page-detail-1](../images/descriptions/audit-logging-page-detail-1-2.png)
+
+![audit-logging-page-detail-2](../images/descriptions/audit-logging-page-detail-2-2.png)
+
+![audit-logging-page-detail-3](../images/descriptions/audit-logging-page-detail-3-2.png)
+
+Audit log module also provides entity change logs. In the "Entity Changes" tab of the Audit Logs page, changes of entities can be listed, filtered and viewed. Below screenshot(screenshots from audit logging ui module) shows list of entity changes in the system.
+
+![audit-logging-page-detail-3](../images/descriptions/audit-logging-module-entity-changes-list-page-2.png)
+
+Each row in this list represent a single entity change item. An entity change detail can be viewed by clicking the "Actions > Change Details" menu item on each row.
+
+![audit-logging-page-detail-3](../images/descriptions/audit-logging-module-entity-change-details-modal-2.png)
+
+Also, all changes of a single entity can be viewed by clicking the "Actions > Full Change History" menu item on each row.
+
+![audit-logging-page-detail-3](../images/descriptions/audit-logging-module-full-entity-change-details-modal-2.png)
